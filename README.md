@@ -1,3 +1,4 @@
+VIDEO: https://youtu.be/RCL9kKi-cWk
 🧾 Gerador de Boleto Bancário em PDF - Java (Builder Pattern)
 Este projeto demonstra a aplicação do padrão de projeto Builder para gerar boletos bancários personalizados. Ao final da execução, o sistema cria um arquivo PDF do boleto com as informações definidas.
 
@@ -19,13 +20,18 @@ src/
 │   ├── director/           # GeradorDeBoleto: controla o processo de criação
 │   ├── boleto/             # Classe Boleto e atributos relacionados
 │   └── pdf/                # Geração de PDF (BoletoPdfGenerator)
+
+VIDEO: https://youtu.be/RCL9kKi-cWk
+
+
+
 🚀 Como Executar
 Clone o repositório:
 
 bash
 Copiar
 Editar
-git clone https://github.com/RonaldLHR/NOME-DO-REPO.git
+git clone https://github.com/RonaldLHR/BoletoPdfGenerator/tree/master
 Abra o projeto em sua IDE (IntelliJ, Eclipse etc.).
 
 Execute a classe:
@@ -52,9 +58,9 @@ O arquivo PDF gerado será salvo na pasta Downloads do usuário.
 
 🛠️ Requisitos
 Java 8 ou superior
-
-(Opcional) Biblioteca externa para geração de PDF, como iText. Certifique-se de adicioná-la ao classpath.
+Biblioteca externa para geração de PDF, como iText.
 
 ✍️ Autor
 Ronald Xavier Queiroz
 GitHub
+VIDEO: https://youtu.be/RCL9kKi-cWk
