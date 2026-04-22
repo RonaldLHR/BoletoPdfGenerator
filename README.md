@@ -1,66 +1,45 @@
-VIDEO: https://youtu.be/RCL9kKi-cWk
-🧾 Gerador de Boleto Bancário em PDF - Java (Builder Pattern)
-Este projeto demonstra a aplicação do padrão de projeto Builder para gerar boletos bancários personalizados. Ao final da execução, o sistema cria um arquivo PDF do boleto com as informações definidas.
+# 📑 Emissor de Boletos Multi-Banco (Java)
 
-🔧 Padrões e Conceitos Usados
-✅ Builder Pattern: separa a construção de um objeto complexo da sua representação.
+Sistema desktop profissional desenvolvido em Java para emissão de boletos bancários no padrão **Febraban**. O projeto utiliza engenharia de software avançada para permitir a troca dinâmica de layouts entre diferentes instituições financeiras como **Itaú**, **Nubank** e **Bradesco**.
 
-📦 Organização modular por pacotes (builder, boleto, pdf, director, main).
+---
 
-🖨️ Geração de PDF com bibliotecas Java (ex: iText ou similar — especifique se estiver usando alguma).
+## 🚀 Tecnologias e Ferramentas
 
-📂 Estrutura do Projeto
-bash
-Copiar
-Editar
-src/
-├── br/com/ronald/builder/
-│   ├── main/               # Classe de execução (TestaGeradorDeBoleto)
-│   ├── builder/            # Builders para diferentes tipos de boletos (ex: BBBoletoBuilder)
-│   ├── director/           # GeradorDeBoleto: controla o processo de criação
-│   ├── boleto/             # Classe Boleto e atributos relacionados
-│   └── pdf/                # Geração de PDF (BoletoPdfGenerator)
+* **Java 25+**: Utilização das versões mais recentes da linguagem.
+* **Java Swing**: Interface Gráfica (GUI) customizada com visual moderno e UX aprimorada.
+* **iText PDF (v5.5.13)**: Biblioteca robusta para geração e manipulação de documentos PDF.
+* **Maven**: Gerenciamento de dependências e build do projeto.
 
-VIDEO: https://youtu.be/RCL9kKi-cWk
+---
 
+## 🧠 Arquitetura e Design Patterns
 
+O projeto foi estruturado utilizando o **Design Pattern Builder**, garantindo que a complexidade de criação de cada banco seja isolada da interface.
 
-🚀 Como Executar
-Clone o repositório:
+### Principais conceitos aplicados:
+* **Builder Pattern**: Separação total entre a lógica de construção do objeto (`Boleto`) e a sua representação final.
+* **Polimorfismo Dinâmico**: O `BoletoPdfGenerator` utiliza `instanceof` para identificar o banco em tempo de execução e aplicar automaticamente a identidade visual (cores, logos e instruções).
+* **Blindagem de Dados**: Algoritmo que garante que o código de barras (**Intercalado 2 de 5**) possua sempre comprimento par (44 dígitos), evitando exceções comuns de formatação.
 
-bash
-Copiar
-Editar
-git clone https://github.com/RonaldLHR/BoletoPdfGenerator/tree/master
-Abra o projeto em sua IDE (IntelliJ, Eclipse etc.).
+---
 
-Execute a classe:
+## 📸 Funcionalidades da Interface
 
-Copiar
-Editar
-br.com.ronald.builder.main.TestaGeradorDeBoleto
-O console exibirá os dados do boleto e informará o caminho de salvamento do PDF:
+A interface foi projetada para ser intuitiva e completa, organizada em quatro seções principais:
+1.  **Dados do Título**: Seleção de banco, valor e ID (Nosso Número).
+2.  **Dados do Beneficiário**: Informações de quem emite o boleto (Ex: **RPS Contabilidade**).
+3.  **Dados do Pagador**: Cadastro completo do cliente (Nome, CPF/CNPJ e Endereço).
+4.  **Instruções de Caixa**: Área para mensagens personalizadas sobre multas e juros.
 
-bash
-Copiar
-Editar
-Gerando PDF em: /home/seu_usuario/Downloads/boleto_bb.pdf
-📌 Exemplo de Saída
-yaml
-Copiar
-Editar
-Dados do Boleto:
-Sacado: João da Silva
-Cedente: Empresa XYZ LTDA
-Valor: R$ 150.00
-Gerando PDF em: /home/ronald/Downloads/boleto_bb.pdf
-O arquivo PDF gerado será salvo na pasta Downloads do usuário.
+---
 
-🛠️ Requisitos
-Java 8 ou superior
-Biblioteca externa para geração de PDF, como iText.
+## 📂 Estrutura de Pacotes
 
-✍️ Autor
-Ronald Xavier Queiroz
-GitHub
-VIDEO: https://youtu.be/RCL9kKi-cWk
+```text
+src/main/java/br/com/ronald/builder/
+│
+├── boleto/    # Interfaces e classes concretas dos bancos (Itau, Nubank, etc)
+├── builder/   # Lógica do Design Pattern Builder para cada instituição
+├── gui/       # Interface gráfica (TelaGeradorBoleto)
+└── pdf/       # Motor de renderização de PDF e Código de Barras
